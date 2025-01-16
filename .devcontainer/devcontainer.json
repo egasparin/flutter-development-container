@@ -1,0 +1,61 @@
+{
+  "name": "Flutter Development Container",
+  // "build": {
+  //   "dockerfile": "Dockerfile"
+  // },
+  // "image": "debian_slim_nonroot_install:latest",
+  "image": "egasparin/flutter:latest",
+
+  "mounts": [
+    // Mapeia o executável do Chrome do host para o contêiner
+    "source=/usr/bin/google-chrome,target=/usr/bin/google-chrome,type=bind"
+
+    // Permite que o contêiner use o X11 do host
+    // "source=/tmp/.X11-unix,target=/tmp/.X11-unix,type=bind"
+  ],
+  "runArgs": [
+    "--privileged",
+    "-v",
+    "/dev/bus/usb:/dev/bus/usb",
+    "--env",
+    "DISPLAY=${env:DISPLAY}",
+    "--volume",
+    "/tmp/.X11-unix:/tmp/.X11-unix",
+    "--env",
+    "DOCKER_HOST=unix:///var/run/docker.sock"
+  ],
+  "remoteEnv": {
+    // Define o executável do Chrome no contêiner
+    "CHROME_EXECUTABLE": "/usr/bin/google-chrome",
+    // Configura o display gráfico do host
+    "DISPLAY": ":0"
+  },
+
+  // Configure tool-specific properties.
+  "customizations": {
+    // Configure properties specific to VS Code.
+    "vscode": {
+      // Add the IDs of extensions you want installed when the container is created.
+      "extensions": [
+        "Dart-Code.dart-code",
+        "Dart-Code.flutter",
+        "Nash.awesome-flutter-snippets",
+        "usernamehw.errorlens",
+        "circlecodesolution.ccs-flutter-color",
+        "GaetSchwartz.build-runner",
+        "dotup.dart-data-class-generator",
+        "marcelovelasquez.flutter-tree"
+      ]
+    }
+  }
+
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  // "forwardPorts": [8081, 5037],
+
+  // Use 'postCreateCommand' to run commands after the container is created.
+  // "postCreateCommand": "flutter pub get",
+
+  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+  // "remoteUser": "devcontainer",
+  // "remoteUser": "root"
+}
