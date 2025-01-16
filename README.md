@@ -59,7 +59,7 @@ A saída deve ser semelhante à seguinte imagem:
 
 ## **Executar o projeto Flutter**
 
-Este repositório já inclui um projeto Flutter configurado. Para executá-lo no navegador do usuário, utilize o comando:
+Este repositório já inclui um projeto Flutter configurado. Para executá-lo no navegador do host, utilize o comando:
 
 ```bash
 flutter run -d web-server
