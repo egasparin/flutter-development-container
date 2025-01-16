@@ -12,6 +12,12 @@ Este repositório configura um ambiente de desenvolvimento Docker para projetos 
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [Extensão Remote - Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
 
+### **Imagem docker referenciada**
+A imagem docker pode ser baixada (pull) ou diretamente linkada no projeto por meio do comando abaixo
+```bash
+docker pull egasparin/flutter:latest
+ ```
+---
 ## **Como clonar o repositório**
 
 1. Certifique-se de que o Docker esteja instalado no seu sistema.
