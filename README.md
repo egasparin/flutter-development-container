@@ -67,6 +67,7 @@ Inicie o container e conecte via tcp ```adb connect XXX.XXX.X.XXX:5555```
 O dispositivo estará disponível para uso no container.
 Para acessar o dispositivo pelo SCRCPY, instale esse no host ```apt install scrcpy ``` e depois que o dispositivo estiver acessivel pelo container, rode no host o comando ```scrcpy```
 Com isso, a tela do celular será exibida pelo SCRCPY mesmo que o dispositivo esteja conectado no container
+
 ---
 
 ## **Conectar smartphone**
