@@ -59,6 +59,18 @@ A saída deve ser semelhante à seguinte imagem:
 
 ## **Executar o projeto Flutter**
 
+Para conectar o dispositivo ao container, é necessário realizar a depuração por wifi, todo o processo inicia-se com o container inativo
+No dispositivo, acesse as Opções de desenvolvedor > Depuração por Wi-fi.
+Na sequência, encontre o endereço ip do dispositivo, por meio do Wifi > Configurações > Avançado > Endereço IP
+No sistema Host, mate o serviço adb com o comando ```adb kill-server ```.
+Inicie o container e conecte via tcp ```adb connect XXX.XXX.X.XXX:5555```
+O dispositivo estará disponível para uso no container.
+Para acessar o dispositivo pelo SCRCPY, instale esse no host ```apt install scrcpy ``` e depois que o dispositivo estiver acessivel pelo container, rode no host o comando ```scrcpy```
+Com isso, a tela do celular será exibida pelo SCRCPY mesmo que o dispositivo esteja conectado no container
+---
+
+## **Conectar smartphone**
+
 Este repositório já inclui um projeto Flutter configurado. Para executá-lo no navegador do host, utilize o comando:
 
 ```bash
